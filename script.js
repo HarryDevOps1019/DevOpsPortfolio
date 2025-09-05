@@ -4,14 +4,13 @@ import { getFirestore, collection, addDoc, getDocs, serverTimestamp } from 'http
 
 // Firebase configuration (replace with your actual config)
 const firebaseConfig = {
-    // Add your Firebase config here
-    // For demo purposes, we'll use a placeholder
-    apiKey: "demo-api-key",
-    authDomain: "demo-project.firebaseapp.com",
-    projectId: "demo-project",
-    storageBucket: "demo-project.appspot.com",
-    messagingSenderId: "123456789",
-    appId: "demo-app-id"
+  apiKey: "AIzaSyBTQLVgOYNg2Tn4SUXak4uWd66840OBcns",
+  authDomain: "protfolio-6a58b.firebaseapp.com",
+  projectId: "protfolio-6a58b",
+  storageBucket: "protfolio-6a58b.appspot.com",
+  messagingSenderId: "1033646093210",
+  appId: "1:1033646093210:web:6814631b53443bae10c023",
+  measurementId: "G-07D4NZ00P4"
 };
 
 // Initialize Firebase
@@ -180,51 +179,52 @@ function createProjectCard(project) {
 function showFallbackProjects() {
     const fallbackProjects = [
         {
-            title: "Kubernetes Cluster Setup",
-            description: "Automated Kubernetes cluster deployment using Terraform and Ansible. Includes monitoring with Prometheus and Grafana.",
-            tools: ["Kubernetes", "Terraform", "Ansible", "Prometheus", "Grafana"],
-            github: "https://github.com/example/k8s-cluster",
-            demo: "https://demo.example.com"
-        },
-        {
-            title: "CI/CD Pipeline with Jenkins",
-            description: "Complete CI/CD pipeline setup for a Node.js application with automated testing, security scanning, and deployment.",
-            tools: ["Jenkins", "Docker", "Node.js", "SonarQube", "AWS"],
-            github: "https://github.com/example/cicd-pipeline",
+            title: "3-Tier GitOps Project",
+            description: "CI/CD pipeline for Node.js API & React client deployed to EKS via ArgoCD. Scans with gitleaks & trivy ensure no security leaks.",
+            tools: ["GitHub Actions", "Docker", "Node.js", "React", "ArgoCD", "EKS", "Trivy", "Gitleaks"],
+            github: "https://github.com/HarryDevOps1019/3-Tier-GitOps-CI.git",
             demo: null
         },
         {
-            title: "Infrastructure as Code",
-            description: "AWS infrastructure provisioning using Terraform with automated backup, scaling, and monitoring capabilities.",
-            tools: ["Terraform", "AWS", "CloudWatch", "Lambda", "S3"],
-            github: "https://github.com/example/aws-iac",
+            title: "Ultimate DevOps Monitoring Project",
+            description: "Full monitoring stack with Prometheus, Alertmanager, Node Exporter, and Blackbox Exporter for real-time metrics, proactive alerts, and notifications.",
+            tools: ["Prometheus", "Alertmanager", "Node Exporter", "Blackbox Exporter", "Email Notifications"],
+            github: "https://github.com/HarryDevOps1019/Boardgame.git",
             demo: null
         },
         {
-            title: "Docker Microservices",
-            description: "Containerized microservices architecture with service discovery, load balancing, and centralized logging.",
-            tools: ["Docker", "Docker Compose", "Nginx", "ELK Stack"],
-            github: "https://github.com/example/microservices",
-            demo: "https://microservices.example.com"
+            title: "Microservices-Demo Project",
+            description: "CI/CD pipeline configured in Azure DevOps, SonarQube integration, 10 Dockerized microservices deployed on Kubernetes (AKS), featuring a live Online Boutique app.",
+            tools: ["Azure DevOps", "SonarQube", "Docker", "Kubernetes", "Microservices"],
+            github: "https://lnkd.in/https://github.com/HarryDevOps1019/microservices-demo.git",
+            demo: null
         },
         {
-            title: "Monitoring Dashboard",
-            description: "Custom monitoring dashboard built with Grafana for tracking application metrics and system performance.",
-            tools: ["Grafana", "Prometheus", "InfluxDB", "Python"],
-            github: "https://github.com/example/monitoring",
-            demo: "https://monitoring.example.com"
+            title: "DevOps Demo Webpage",
+            description: "Node.js-based demo project showcasing CI/CD with Jenkins, Docker containerization, OWASP Dependency-Check, deployed on Azure VM.",
+            tools: ["Node.js", "Jenkins", "Docker", "OWASP Dependency-Check", "Azure VM"],
+            github: "https://github.com/HarryDevOps1019/nodejs_webpage_forDevOps.git",
+            demo: null
         },
         {
-            title: "Automated Backup Solution",
-            description: "Automated backup and disaster recovery solution for cloud infrastructure with scheduled snapshots.",
-            tools: ["Python", "AWS", "Bash", "Cron", "S3"],
-            github: "https://github.com/example/backup-solution",
+            title: "Ekart CI/CD Pipeline Automation",
+            description: "Fully automated Jenkins pipeline integrated with Git, Maven, SonarQube, Docker, Trivy, and Kubernetes for faster, reliable deployments.",
+            tools: ["Jenkins", "Git", "Maven", "SonarQube", "Docker", "Trivy", "Kubernetes"],
+            github: "https://github.com/HarryDevOps1019/Ekart.git",
+            demo: null
+        },
+        {
+            title: "Spring PetClinic Deployment with Ansible",
+            description: "Automated deployment of Spring PetClinic app to Apache Tomcat using Ansible. Setup includes AWS EC2 Control Node and managed nodes for seamless configuration.",
+            tools: ["Ansible", "AWS EC2", "Apache Tomcat", "Spring"],
+            github: "https://github.com/HarryDevOps1019/Petclinic.git",
             demo: null
         }
     ];
-    
+
     displayProjects(fallbackProjects);
 }
+
 
 // Initialize contact form
 function initContactForm() {
@@ -316,24 +316,14 @@ function initContactForm() {
 // Initialize resume download
 function initResumeDownload() {
     const downloadBtn = document.getElementById('download-resume');
-    
     downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        // In a real application, this would link to a PDF stored in Firebase Storage
-        // For demo purposes, we'll show an alert
-        const alert = document.createElement('div');
-        alert.className = 'alert alert-info mt-3';
-        alert.innerHTML = `
-            <i class="bi bi-info-circle me-2"></i>
-            Resume download would be available here. In a real application, this would link to a PDF stored in Firebase Storage at /assets/resume.pdf
-        `;
-        
-        downloadBtn.parentElement.appendChild(alert);
-        
-        setTimeout(() => {
-            alert.remove();
-        }, 5000);
+        const link = document.createElement('a');
+        link.href = 'assets/cv.pdf';
+        link.download = 'cv.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     });
 }
 

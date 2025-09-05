@@ -1,14 +1,15 @@
 // Firebase configuration example
 // Replace these values with your actual Firebase project config
 // Get these values from Firebase Console > Project Settings > Web App
-
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "your-api-key-here",
-    authDomain: "your-project-id.firebaseapp.com",
-    projectId: "your-project-id",
-    storageBucket: "your-project-id.appspot.com",
-    messagingSenderId: "your-sender-id",
-    appId: "your-app-id"
+  apiKey: "AIzaSyBTQLVgOYNg2Tn4SUXak4uWd66840OBcns",
+  authDomain: "protfolio-6a58b.firebaseapp.com",
+  projectId: "protfolio-6a58b",
+  storageBucket: "protfolio-6a58b.appspot.com",
+  messagingSenderId: "1033646093210",
+  appId: "1:1033646093210:web:6814631b53443bae10c023",
+  measurementId: "G-07D4NZ00P4"
 };
 
 // Instructions:
