@@ -319,8 +319,8 @@ function initResumeDownload() {
     downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const link = document.createElement('a');
-        link.href = 'assets/cv.pdf';
-        link.download = 'cv.pdf';
+        link.href = './assets/resume.pdf';
+        link.download = 'resume.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
