@@ -319,8 +319,8 @@ function initResumeDownload() {
     downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const link = document.createElement('a');
-        link.href = 'assets/cv.pdf';
-        link.download = 'cv.pdf';
+        link.href = 'assets/harinther_cv.pdf';
+        link.download = 'harinther_cv.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
